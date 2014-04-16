@@ -1,16 +1,18 @@
 <div class="container">
-  <h1> You selected <%= @borough %> </h1>
-    <p class="warning">
-        <span>Loading Vacant Lots!</span>
-    </p>
+  <h4 class="monkey"><%=link_to "Search", welcome_path %></h4>
+  <h3 class="monkey"><%= @borough %> | Showing: <%=@x+1%>-<%=@y+1%> | Total Lots: <%=@count%></h3>
+  
+  <p class="warning">
+      <span>Loading Vacant Lots.....  Click on image for details</span>
+  </p>
 
-    <p id="vacant_lots">
-      <% @lots.each do |lot| %>
-        <img src="http://maps.googleapis.com/maps/api/streetview?size=350x200&amp;location=<%=lot.latitude%>,<%=lot.longitude%>&amp;sensor=false&key=AIzaSyAHvAmqhx1HbRzZQQxzHeklG2g8_1Kt62I" alt='Address: <%= lot.address %>  |  BBL: <%= lot.bbl %>  |  Agency/Landowner: <%= lot.agency %>'>
+  <p id="vacant_lots">
+    <% @lots.each do |lot| %>
+      <img src="http://maps.googleapis.com/maps/api/streetview?size=350x200&amp;location=<%=lot.latitude%>,<%=lot.longitude%>&amp;sensor=false&key=AIzaSyAHvAmqhx1HbRzZQQxzHeklG2g8_1Kt62I" alt='Address: <%= lot.address %>  |  BBL: <%= lot.bbl %>  |  Agency/Landowner: <%= lot.agency %>'>
+    <% end %>
+  </p>
 
-      <% end %>
-    </p>
-
-    <%= link_to 'Previous', results_path(:borough=>@borough,:x => @x-9) %> |
+  <%if @y<@count%>
     <%= link_to 'Next', results_path(:borough=>@borough,:x => @x+9) %>
+  <%end%>
 </div>

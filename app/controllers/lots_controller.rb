@@ -10,6 +10,7 @@ class LotsController < ApplicationController
 
     @borough = params[:borough]
     @lots=Lot.where(borough: @borough)[@x..@y]
+    @count=Lot.where(borough:@borough).count
   end
 
   def results
@@ -18,6 +19,7 @@ class LotsController < ApplicationController
 
     @borough = params[:borough]
     @lots=Lot.where(borough: @borough)[@x..@y]
+    @count=Lot.where(borough: @borough).count
   end
 
 end
