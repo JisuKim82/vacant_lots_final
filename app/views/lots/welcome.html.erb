@@ -1,9 +1,15 @@
-<h1>Search Vacant Lots</h1>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Hello!</h1>
+    <p>Search for vacant lots in you area</p>
 
-<%= form_tag("/search", method: "get") do %>
+    <a class="btn btn-primary btn-lg" id="submit_button">
+      <%= form_tag("/search", method: "get") do %>
 
-  <%= select_tag "borough", options_for_select(@boroughs), prompt: "Select Borough", id: "borough" %>
-  <%= submit_tag("Search") %>
-    
-<% end %>
-
+        <%= select_tag "borough", options_for_select(@boroughs), prompt: "Select Borough", id: "borough" %>
+        <%= submit_tag("Search") %>
+          
+      <% end %>
+    </a>
+  </div>
+</div>

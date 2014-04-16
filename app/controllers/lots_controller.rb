@@ -6,7 +6,7 @@ class LotsController < ApplicationController
   def search
     # raise params.inspect
     @x ||= 0
-    @y ||= @x+9
+    @y ||= @x+8
 
     @borough = params[:borough]
     @lots=Lot.where(borough: @borough)[@x..@y]
@@ -14,7 +14,7 @@ class LotsController < ApplicationController
 
   def results
     @x = params[:x].to_i
-    @y = @x+9
+    @y = @x+8
 
     @borough = params[:borough]
     @lots=Lot.where(borough: @borough)[@x..@y]
