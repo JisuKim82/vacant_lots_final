@@ -1,0 +1,22 @@
+body {
+  background: #DEF8F3;
+}
+
+.warning{
+  background: white;
+}
+
+#overlay{
+  background: rgba(0,0,0,.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;  
+}
+
+#overlay img{
+  margin-top: 10%;
+}

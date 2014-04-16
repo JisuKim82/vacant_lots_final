@@ -1,0 +1,9 @@
+<h1>Search Vacant Lots</h1>
+
+<%= form_tag("/search", method: "get") do %>
+
+  <%= select_tag "borough", options_for_select(@boroughs), prompt: "Select Borough", id: "borough" %>
+  <%= submit_tag("Search") %>
+    
+<% end %>
+
