@@ -15,6 +15,8 @@ $(document).ready(function(){
     var imageLocation = $(this).attr("src");
 
     $caption.text($(this).attr("alt"));
+    var escaped = $caption.text();
+    $caption.html(escaped.replace(/\|/g, '<br/>'));
 
     $image.attr("src", imageLocation);
     $overlay.show();
