@@ -8,7 +8,7 @@
 
   <p id="vacant_lots">
     <% @lots.each do |lot| %>
-      <img src="http://maps.googleapis.com/maps/api/streetview?size=350x200&amp;location=<%=lot.latitude%>,<%=lot.longitude%>&amp;sensor=false&key=AIzaSyAHvAmqhx1HbRzZQQxzHeklG2g8_1Kt62I" alt="Address: <%= lot.address %> | BBL: <%= lot.bbl %> | Block: <%= lot.block %> | Lot: <%= lot.lot %> | Agency/Landowner: <%= lot.agency %> | Sqft: <%= lot.area_sqft %> | Acres: <%=lot.area_acres%> | Vacant: <%= lot.is_vacant %> | Accessible: <%= lot.accessible %>"> 
+      <img src="http://maps.googleapis.com/maps/api/streetview?size=350x200&amp;location=<%=lot.latitude%>,<%=lot.longitude%>&amp;sensor=false&key=<%=ENV["GOOG_API"]%>" alt="Address: <%= lot.address %> | BBL: <%= lot.bbl %> | Block: <%= lot.block %> | Lot: <%= lot.lot %> | Agency/Landowner: <%= lot.agency %> | Sqft: <%= lot.area_sqft %> | Acres: <%=lot.area_acres%> | Vacant: <%= lot.is_vacant %> | Accessible: <%= lot.accessible %>"> 
     <% end %>
   </p>
 
