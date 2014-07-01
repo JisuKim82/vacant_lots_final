@@ -1,0 +1,1 @@
+[![Vacant Lots](/app/assets/images/screenshot.png)](http://vacant-lots.herokuapp.com/)
